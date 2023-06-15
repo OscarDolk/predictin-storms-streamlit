@@ -4,6 +4,7 @@ import numpy as np
 import requests
 from PIL import Image
 import toml
+from datetime import datetime
 from datetime import date
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
@@ -135,9 +136,11 @@ def page1():
     Most Tornadoes occur between March and June. Please select a date for your Tornado.
     ''')
     today = date.today()
-    min_date = '1950-01-01'
+    #min_date = '1950-01-01'
+    min_date = datetime(1950, 1, 1)
+    #default_date = datetime(2022, 6, 15)
     BEGIN_DATE = st.date_input(
-        '',min_value=min_date)
+        'Select a date:', min_value=min_date, value=today)
     #    #datetime.date(today.year, today.month, today.day))
     #st.write('You have selected this date:', BEGIN_DATE)
     #BEGIN_DATE = st.date_input(

@@ -179,21 +179,18 @@ def page1():
             # Display the extracted value
             #st.write(f_scale_value)
             if f_scale_value == 'Light Damage (EF0)':
-                st.markdown(
-                            "<span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("<span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
                 st.markdown("<span style='color: green; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $25.000'
                     "</div>",
                 ), unsafe_allow_html=True)
             elif f_scale_value == 'Moderate Damage (EF1)':
                 st.markdown("<span style='color: orange; font-size: 42px' >{}</span>".format(f_scale_value), unsafe_allow_html=True)
-                st.markdown("<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>"
-                    "<span style='color: orange; font-size: 48px'>{}</span>".format('Estimated Cost: $25.000 - $250.000'
+                st.markdown("<span style='color: orange; font-size: 48px'>{}</span>".format('Estimated Cost: $25.000 - $250.000'
                     "</div>",
                 ), unsafe_allow_html=True)
             elif f_scale_value == 'Considerable Damage (EF2-EF5)':
                 st.markdown("<span style='color: red; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
-                st.markdown("<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>"
-                    "<span style='color: red; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $3 Billion'
+                st.markdown("<span style='color: red; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $3 Billion'
                     "</div>",
                 ), unsafe_allow_html=True)
         else:

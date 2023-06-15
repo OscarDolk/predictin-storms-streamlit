@@ -24,7 +24,7 @@ def page1():
     #st.image(image)
 
     st.markdown('''
-    Welcome to the Tornado-impact estimator. The predictor will estimate the severity of the damages caused by a tornado, based its characteristics (State, Duration, Tornado width, Tornado length and Date).
+    Welcome to the Tornado-impact estimator. The predictor will estimate the severity of the damages caused by a tornado, based on its characteristics (State, Duration, Tornado width, Tornado length and Date).
 
     The Fujita-scale rates the intensity of a tornado based on the damage inflicted
     on buildings and vegetation.
@@ -180,17 +180,22 @@ def page1():
             #st.write(f_scale_value)
             if f_scale_value == 'Light Damage (EF0)':
                 st.markdown("Predicted Result: <span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
-                st.write('Up to $25.000')
                 st.markdown("<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>"
-                    "<span style='color: green; font-size: 60px'>{}</span>".format('Estimated Cost: Up to $25.000'
+                    "<span style='color: green; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $25.000'
                     "</div>",
                 ), unsafe_allow_html=True)
             elif f_scale_value == 'Moderate Damage (EF1)':
                 st.markdown("Predicted Result: <span style='color: orange; font-size: 42px' >{}</span>".format(f_scale_value), unsafe_allow_html=True)
-                st.write('MILLIONS OF DOLLARS')
+                st.markdown("<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>"
+                    "<span style='color: orange; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $25.000'
+                    "</div>",
+                ), unsafe_allow_html=True)
             elif f_scale_value == 'Considerable Damage (EF2-EF5)':
                 st.markdown("Predicted Result: <span style='color: red; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
-                st.write('MILLIONS OF DOLLARS')
+                st.markdown("<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>"
+                    "<span style='color: red; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $25.000'
+                    "</div>",
+                ), unsafe_allow_html=True)
         else:
             st.write(f"Error: {response.status_code}")
 

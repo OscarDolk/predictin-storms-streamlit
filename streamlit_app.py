@@ -179,7 +179,8 @@ def page1():
             # Display the extracted value
             #st.write(f_scale_value)
             if f_scale_value == 'Light Damage (EF0)':
-                st.markdown("Predicted Result: <span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("<span style='color: green; font-size: font-size: 42px;'>Predicted Result:</span> "
+                            "<span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
                 st.markdown("<span style='color: green; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $25.000'
                     "</div>",
                 ), unsafe_allow_html=True)

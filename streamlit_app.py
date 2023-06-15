@@ -25,9 +25,6 @@ def page1():
 
     st.markdown('''
     Welcome to the Tornado-impact estimator. The predictor will estimate the severity of the damages caused by a tornado, based on its characteristics (State, Duration, Tornado width, Tornado length and Date).
-
-    The Fujita-scale rates the intensity of a tornado based on the damage inflicted
-    on buildings and vegetation.
     ''')
 
     #st.image(image, width=600)
@@ -253,7 +250,7 @@ def page2():
                 formatted_cost = "{:,.0f}".format(total_cost)  # Format with thousand separators
 
                 st.markdown(
-                    "<span style='color: red; font-size: 42px;'>Estimated Cost: ${} million dollars</span>".format(formatted_cost),
+                    "<span style='color: red; font-size: 42px;'>Estimated Cost: ${} million</span>".format(formatted_cost),
                     unsafe_allow_html=True)
 
                 merg = pd.read_csv(r'raw_data/past_frequency.csv')

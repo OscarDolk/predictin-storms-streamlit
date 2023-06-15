@@ -107,7 +107,7 @@ def page1():
     ''')
     #TOR_WIDTH = st.slider('', 0, 3000, 45)
     TOR_WIDTH = st.number_input('  ')
-    st.write("You selected a width of:", TOR_WIDTH, 'feet.')
+    st.write("You selected a width of:", TOR_WIDTH, 'meters.')
     st.markdown('####')
 
     #Tornado length selection########################################################
@@ -117,17 +117,17 @@ def page1():
     ''')
     #TOR_LENGTH = st.slider('', 0, 1000, 4)
     TOR_LENGTH = st.number_input('')
-    st.write("Ýou selected a travel length of:", TOR_LENGTH, 'miles.')
+    st.write("Ýou selected a travel length of:", TOR_LENGTH, 'kilometers.')
     st.markdown('####')
     #The max lenght of Tornadoes from the dataset is 643,737 kilometers.
 
     #Convert Tornado Width to meters.
     #Width of the tornado or tornado segment while on the ground (in feet).
-    #TOR_WIDTH = TOR_WIDTH /3.281
+    TOR_WIDTH = TOR_WIDTH /0.3048
 
     #Convert Tornado Length to meters.
     #Length of the tornado or tornado segment while on the ground (in miles to the tenth).
-    #TOR_LENGTH = TOR_LENGTH * 1.6093435
+    TOR_LENGTH = TOR_LENGTH / 1.6093435
 
     #Tornado date selection#########################################################
     st.markdown('''

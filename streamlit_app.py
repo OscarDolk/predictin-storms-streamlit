@@ -4,12 +4,8 @@ import numpy as np
 import requests
 from PIL import Image
 import toml
-import folium
-import datetime
 from datetime import date
 import matplotlib.pyplot as plt
-import pickle
-from google.cloud import storage
 import plotly.graph_objects as go
 
 
@@ -47,10 +43,6 @@ def page1():
 
     # Set the initial center coordinates for the map
     #initial_coords = [37.0902, -95.7129]
-
-
-    # Create the map object using folium
-    #m = folium.Map(location=initial_coords, zoom_start=4)
 
     #Plot the map from Charlotte################################################
     merg = pd.read_csv(r'raw_data/merg.csv')

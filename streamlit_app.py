@@ -244,9 +244,12 @@ def page2():
                 # Display the extracted value
                 # Write the text using Markdown
                 #st.markdown("Predicted Result: " + str(frequency))
-                st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(frequency), unsafe_allow_html=True)
-                st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(total_cost), unsafe_allow_html=True)
-                total_cost = round(total_cost / 1000000) * 1000000  # Round to closest million
+                #st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(frequency), unsafe_allow_html=True)
+                st.markdown(
+                    "<span style='color: black; font-size: 42px;'>${} Tornadoes </span>".format(frequency),
+                    unsafe_allow_html=True)
+                #st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(total_cost), unsafe_allow_html=True)
+                total_cost = round(total_cost / 1000000)  # Round to closest million
                 formatted_cost = "{:,.0f}".format(total_cost)  # Format with thousand separators
 
                 st.markdown(

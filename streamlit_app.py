@@ -177,7 +177,7 @@ def page1():
             if f_scale_value == 'Light Damage (EF0)':
                 st.markdown("Prediction Result: <span style='color: green;'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
             elif f_scale_value == 'Moderate Damage (EF1)':
-                st.markdown("Prediction Result: <span style='color: yellow;'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("Prediction Result: <span style='color: orange;'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
             elif f_scale_value == 'Considerable Damage (EF2-EF5)':
                 st.markdown("Prediction Result: <span style='color: red;'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
         else:

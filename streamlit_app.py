@@ -180,8 +180,7 @@ def page1():
             #st.write(f_scale_value)
             if f_scale_value == 'Light Damage (EF0)':
                 st.markdown("Predicted Result: <span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
-                st.markdown("<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>"
-                    "<span style='color: green; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $25.000'
+                st.markdown("<span style='color: green; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $25.000'
                     "</div>",
                 ), unsafe_allow_html=True)
             elif f_scale_value == 'Moderate Damage (EF1)':

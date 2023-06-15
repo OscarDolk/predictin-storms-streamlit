@@ -201,7 +201,7 @@ def page2():
     st.title('Tornado Frequency Predictor')
     # Add content for page 2
     #Frequency Prediction#####################################################################
-    st.title('Predict the frequency of Tornadoes')
+    #st.title('Predict the frequency of Tornadoes')
 
     YEAR = st.selectbox('Choose a Year:', ('2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033'))
 
@@ -246,14 +246,14 @@ def page2():
                 #st.markdown("Predicted Result: " + str(frequency))
                 #st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(frequency), unsafe_allow_html=True)
                 st.markdown(
-                    "<span style='color: black; font-size: 42px;'>${} Tornadoes </span>".format(frequency),
+                    "<span style='color: red; font-size: 42px;'>{} Tornadoes </span>".format(frequency),
                     unsafe_allow_html=True)
                 #st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(total_cost), unsafe_allow_html=True)
                 total_cost = round(total_cost / 1000000)  # Round to closest million
                 formatted_cost = "{:,.0f}".format(total_cost)  # Format with thousand separators
 
                 st.markdown(
-                    "<span style='color: black; font-size: 42px;'>${} million dollars</span>".format(formatted_cost),
+                    "<span style='color: red; font-size: 42px;'>${} million dollars</span>".format(formatted_cost),
                     unsafe_allow_html=True)
 
                 merg = pd.read_csv(r'raw_data/past_frequency.csv')

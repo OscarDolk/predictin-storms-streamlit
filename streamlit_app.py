@@ -30,9 +30,8 @@ def page1():
     on buildings and vegetation.
     ''')
 
-    image = Image.open(r'images/Enhanced_Fujita_Scale.jpg')
-    st.image(image, width=600)
-    st.caption('https://www.iccsafe.org/building-safety-journal/bsj-dives/how-damage-determines-a-tornados-rating-from-fujita-to-enhanced-fujita/')
+    #st.image(image, width=600)
+    #st.caption('https://www.iccsafe.org/building-safety-journal/bsj-dives/how-damage-determines-a-tornados-rating-from-fujita-to-enhanced-fujita/')
     #df = pd.read_csv("raw_data/dataframe.csv")
     #\\wsl.localhost\Ubuntu\home\oscardolk\code\OscarDolk\chbohne99\predicting-storms
 
@@ -58,24 +57,26 @@ def page1():
 )
     # fig.update_traces(textposition='inside')
     fig.update_layout(
-        title_text = 'Number of Tornadoes per State',
+        title_text = 'Number of Tornadoes per State in total, since 1950',
         geo_scope = 'usa'
     )
     st.plotly_chart(fig, theme='streamlit', use_container_width=True)
     ############################################################################
 
-    STATE = st.selectbox(
-        'Which State do you want to select?',
-        ('FLORIDA', 'ILLINOIS', 'OKLAHOMA', 'CALIFORNIA', 'MINNESOTA',
+    states = ['FLORIDA', 'ILLINOIS', 'OKLAHOMA', 'CALIFORNIA', 'MINNESOTA',
            'TEXAS', 'TENNESSEE', 'ALABAMA', 'WYOMING', 'WISCONSIN', 'OHIO',
            'NEBRASKA', 'INDIANA','GEORGIA', 'VIRGINIA', 'MISSOURI',
            'NORTH CAROLINA', 'COLORADO','NORTH DAKOTA', 'KANSAS', 'NEW YORK',
            'IOWA', 'MARYLAND','ARKANSAS', 'SOUTH CAROLINA', 'MONTANA',
            'SOUTH DAKOTA', 'IDAHO','PENNSYLVANIA','MICHIGAN', 'ARIZONA',
-           'MISSISSIPPI', 'LOUISIANA','NEW MEXICO'))
+           'MISSISSIPPI', 'LOUISIANA','NEW MEXICO']
 
-    st.write('You selected:', STATE)
-    st.markdown('####')
+    sorted_states = sorted(states)
+    STATE = st.selectbox(
+        'Which State do you want to select?', sorted_states)
+
+    #st.write('You selected:', STATE)
+    #st.markdown('####')
 
     #option = st.selectbox(
     #    'What is the width of the Tornado',
@@ -94,8 +95,8 @@ def page1():
     In exceptional cases, violent events can last more than three hours.
     Please select the duration of your Tornado:
     ''')
-    #DURATION= st.slider('',0, 180, 8)
-    DURATION = st.number_input(' ')
+    DURATION= st.slider('',0, 50, 4)
+    #DURATION = st.number_input(' ')
     st.write("You selected a duration of:", DURATION, 'minutes.')
     st.markdown('####')
 
@@ -106,8 +107,8 @@ def page1():
     The width of Tornadoes can vary greatly. On average, a tornado is about 45 meters wide.
     Please select the width of your Tornado:
     ''')
-    #TOR_WIDTH = st.slider('', 0, 3000, 45)
-    TOR_WIDTH = st.number_input('  ')
+    TOR_WIDTH = st.slider('', 0, 500, 10)
+    #TOR_WIDTH = st.number_input('  ')
     st.write("You selected a width of:", TOR_WIDTH, 'meters.')
     st.markdown('####')
 
@@ -116,8 +117,8 @@ def page1():
     The length a Tornado travels can vary greatly. On average, a tornado travels a distance of 4,5 km before dissapearing.
     Please select the travel length of your Tornado:
     ''')
-    #TOR_LENGTH = st.slider('', 0, 1000, 4)
-    TOR_LENGTH = st.number_input('')
+    TOR_LENGTH = st.slider('', 0, 100, 15)
+    #TOR_LENGTH = st.number_input('')
     st.write("Ýou selected a travel length of:", TOR_LENGTH, 'kilometers.')
     st.markdown('####')
     #The max lenght of Tornadoes from the dataset is 643,737 kilometers.
@@ -150,7 +151,7 @@ def page1():
     #BEGIN_DATE = st.text_input('Input date:')
 
     #Prediction#####################################################################
-    st.title('Predict the Damage for your tornado')
+    #st.title('Predict the Damage for your tornado')
     damage_predict = st.button('Click here for Damage Prediction')
 
 
@@ -178,11 +179,14 @@ def page1():
             # Display the extracted value
             #st.write(f_scale_value)
             if f_scale_value == 'Light Damage (EF0)':
-                st.markdown("Prediction Result: <span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("Predicted Result: <span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.write('MILLIONS OF DOLLARS')
             elif f_scale_value == 'Moderate Damage (EF1)':
-                st.markdown("Prediction Result: <span style='color: orange; font-size: 42px' >{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("Predicted Result: <span style='color: orange; font-size: 42px' >{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.write('MILLIONS OF DOLLARS')
             elif f_scale_value == 'Considerable Damage (EF2-EF5)':
-                st.markdown("Prediction Result: <span style='color: red; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("Predicted Result: <span style='color: red; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.write('MILLIONS OF DOLLARS')
         else:
             st.write(f"Error: {response.status_code}")
 

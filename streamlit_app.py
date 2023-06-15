@@ -227,6 +227,15 @@ def page2():
             # Extract the value of "f_scale" from the response
             frequency = data["frequency"]
 
+            ef0=frequency*0.42
+            ef1=frequency*0.44
+            ef2=frequency-ef0-ef1
+
+            ef0_cost = 35000*ef0
+            ef1_cost = 92000*ef1
+            ef2_cost = 2000000*ef2
+            total_cost = ef0_cost+ef1_cost+ef2_cost
+
             # Create an empty placeholder
             #result_placeholder = st.empty()
 
@@ -234,7 +243,9 @@ def page2():
             if frequency_predict:
                 # Display the extracted value
                 # Write the text using Markdown
-                st.markdown("Prediction Result: " + str(frequency))
+                st.markdown("Predicted Result: " + str(frequency))
+                st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(frequency), unsafe_allow_html=True)
+                st.markdown("<span style='color: black; font-size: 42px'>{}</span>".format(total_cost), unsafe_allow_html=True)
 
                 merg = pd.read_csv(r'raw_data/past_frequency.csv')
 

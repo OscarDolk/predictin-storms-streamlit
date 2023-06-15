@@ -185,7 +185,7 @@ def page1():
                 ), unsafe_allow_html=True)
             elif f_scale_value == 'Moderate Damage (EF1)':
                 st.markdown("<span style='color: orange; font-size: 42px' >{}</span>".format(f_scale_value), unsafe_allow_html=True)
-                st.markdown("<span style='color: orange; font-size: 48px'>{}</span>".format('Estimated Cost: $25.000 - $250.000')
+                st.markdown("<span style='color: orange; font-size: 48px'>{}</span>".format('Estimated Cost: Up to $250.000')
                     , unsafe_allow_html=True)
             elif f_scale_value == 'Considerable Damage (EF2-EF5)':
                 st.markdown("<span style='color: red; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)

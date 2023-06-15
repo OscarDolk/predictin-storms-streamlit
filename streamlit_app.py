@@ -136,15 +136,15 @@ def page1():
     ''')
     today = date.today()
     min_date = '1950-01-01'
-    #BEGIN_DATE = st.date_input(
-    #    '',min_value=min_date)
+    BEGIN_DATE = st.date_input(
+        '',min_value=min_date)
     #    #datetime.date(today.year, today.month, today.day))
     #st.write('You have selected this date:', BEGIN_DATE)
     #BEGIN_DATE = st.date_input(
     #   "Choose the day of the tornado",
     #      datetime.date(2019, 7, 6), min_value=min_date)
 
-    BEGIN_DATE = st.text_input('Input date:')
+    #BEGIN_DATE = st.text_input('Input date:')
 
     #Prediction#####################################################################
     st.title('Predict the Damage for your tornado')
@@ -175,11 +175,11 @@ def page1():
             # Display the extracted value
             #st.write(f_scale_value)
             if f_scale_value == 'Light Damage (EF0)':
-                st.markdown("Prediction Result: <span style='color: green;'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("Prediction Result: <span style='color: green; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
             elif f_scale_value == 'Moderate Damage (EF1)':
-                st.markdown("Prediction Result: <span style='color: orange;'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("Prediction Result: <span style='color: orange; font-size: 42px' >{}</span>".format(f_scale_value), unsafe_allow_html=True)
             elif f_scale_value == 'Considerable Damage (EF2-EF5)':
-                st.markdown("Prediction Result: <span style='color: red;'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
+                st.markdown("Prediction Result: <span style='color: red; font-size: 42px'>{}</span>".format(f_scale_value), unsafe_allow_html=True)
         else:
             st.write(f"Error: {response.status_code}")
 

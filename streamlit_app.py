@@ -202,7 +202,7 @@ def page2():
 
     YEAR = st.selectbox('Choose a Year:', ('2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033'))
 
-    frequency_predict = st.button('Click here for Frequency and Cost Predictions')
+    frequency_predict = st.button('Click here for Frequency Predictions')
 
 
     YEAR = int(YEAR)

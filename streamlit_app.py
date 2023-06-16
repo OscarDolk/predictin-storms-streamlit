@@ -249,9 +249,9 @@ def page2():
                 total_cost = round(total_cost / 1000000)  # Round to closest million
                 formatted_cost = "{:,.0f}".format(total_cost)  # Format with thousand separators
 
-                st.markdown(
-                    "<span style='color: red; font-size: 42px;'>Estimated Cost: ${} million</span>".format(formatted_cost),
-                    unsafe_allow_html=True)
+                #st.markdown(
+                #    "<span style='color: red; font-size: 42px;'>Estimated Cost: ${} million</span>".format(formatted_cost),
+                #    unsafe_allow_html=True)
 
                 merg = pd.read_csv(r'raw_data/past_frequency.csv')
 
